@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EasyFinance - Register</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-content">
+            <form action="/register" method="post" class="login-form">
+                <h2>Cria uma conta</h2>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="input-group">
+                    <input type="text" name="username" required>
+                    <label>Utilizador</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Register</button>
+                <p class="register-link">Já tens uma conta? <a href="/">Login</a></p>
+            </form>
+            <div class="image-container">
+                <img src="../static/EASYFINANCE.png" alt="EasyFinance Logo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
