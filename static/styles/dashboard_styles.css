@@ -1,0 +1,119 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2c2c2c 0%, #2c2c2c 100%);
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    background: rgba(0, 0, 0, 0.7); /* Slightly transparent for modern feel */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar-header {
+    padding: 0 20px;
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.user-info {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 30px;
+}
+
+.sidebar-menu li {
+    margin: 20px 0;
+}
+
+.sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+    padding: 12px 0;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #4bc0c0;
+}
+
+.sidebar-menu i {
+    margin-right: 25px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.1); /* Transparent background to match the login style */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px 20px 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 250px); /* Adjust to the sidebar width */
+    z-index: 1000;
+}
+
+.main-title {
+    font-size: 24px;
+}
+
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .sidebar.active {
+        transform: translateX(-250px); /* Hide the sidebar on mobile */
+    }
+}

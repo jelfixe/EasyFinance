@@ -48,7 +48,7 @@ def login():
         session['user_id'] = user['id']
         return redirect('/dashboard')
     else:
-        flash('inválido', 'error')
+        flash('Inválido', 'error')
         return redirect('/')
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -66,10 +66,10 @@ def register():
             conn.commit()
             conn.close()
             
-            flash('registado com sucesso', 'success')
+            flash('Registado com sucesso', 'success')
             return redirect('/')
         except sqlite3.IntegrityError:
-            flash('utilizador já existe', 'error')
+            flash('Utilizador já existe', 'error')
     
     return render_template('register.html')
 
