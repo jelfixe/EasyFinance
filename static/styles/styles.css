@@ -145,3 +145,18 @@ button:hover {
     color: white;
 }
 
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.remember-me input {
+    margin-right: 10px;
+}
+
+.remember-me label {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}   
