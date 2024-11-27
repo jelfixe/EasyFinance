@@ -6,30 +6,29 @@
     <title>EasyFinance - Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static//styles/dashboard_styles.css">
+    <link rel="stylesheet" href="../static/styles/dashboard_styles.css">
+    <script src="../static/scripts/dashboard.js" defer></script>
 </head>
 <body>
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h2><span class="easy">Easy</span><span class="finance">Finance</span></h2>
             <div class="user-info">
-                <p><b>Bem-vind@, <span class="user-name">{{ username }}</span></b></p> <br>
-            </div>
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
+                <p><b>Bem-vind@, <span class="user-name">{{ username }}</span></b></p>
             </div>
         </div>
         <ul class="sidebar-menu">
-            <li><a href="#" class="menu-item"><i class="fa-solid fa-home"></i></i> Home</a></li>
-            <li><a href="#" class="menu-item"><i class="fa-solid fa-arrow-trend-up"></i></i> Investimentos</a></li>
-            <li><a href="#" class="menu-item"><i class="fa-solid fa-coins"></i></i> Gastos</a></li>
-            <li><a href="#" class="menu-item"><i class="fa-solid fa-piggy-bank"></i></i> Poupanças</a></li>
-            <li><a href="#" class="menu-item"><i class="fas fa-cogs"></i> Configurações</a></li>
+            <li><a href="#" class="menu-item" data-target="/home"><i class="fa-solid fa-home"></i> Home</a></li>
+            <li><a href="#" class="menu-item" data-target="/investimentos"><i class="fa-solid fa-arrow-trend-up"></i> Investimentos</a></li>
+            <li><a href="#" class="menu-item" data-target="/gastos"><i class="fa-solid fa-coins"></i> Gastos</a></li>
+            <li><a href="#" class="menu-item" data-target="/poupancas"><i class="fa-solid fa-piggy-bank"></i> Poupanças</a></li>
+            <li><a href="#" class="menu-item" data-target="/configuracoes"><i class="fas fa-cogs"></i> Configurações</a></li>
+            <!-- This is the logout link, separate from the iframe -->
             <li><a href="/logout" class="menu-item"><i class="fas fa-sign-out-alt"></i> Terminar Sessão</a></li>
         </ul>
     </div>
-
-    <script src="../static/scripts/dashboard_ham.js"></script>
+    <div class="content-area">
+        <iframe id="content-frame" src="/home"></iframe>
+    </div>
 </body>
 </html>

@@ -89,6 +89,27 @@ def logout():
     session.pop('user_id', None)
     return redirect('/')
 
+
+@app.route('/home')
+def home_page():
+    return render_template('home.html')
+
+@app.route('/investimentos')
+def investimentos_page():
+    return render_template('investimentos.html')
+
+@app.route('/gastos')
+def gastos_page():
+    return render_template('gastos.html')
+
+@app.route('/poupancas')
+def poupancas_page():
+    return render_template('poupancas.html')
+
+@app.route('/configuracoes')
+def configuracoes_page():
+    return render_template('configuracoes.html')
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
