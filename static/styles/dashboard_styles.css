@@ -1,5 +1,5 @@
 :root {
-    --sidebar-width: 250px; /* Sidebar width */
+    --sidebar-width: 250px; 
 }
 
 body {
@@ -28,7 +28,7 @@ body {
     width: var(--sidebar-width);
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    position: fixed; /* Sidebar stays fixed on the left */
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -38,7 +38,7 @@ body {
 }
 
 .sidebar.active {
-    width: 200px; /* Sidebar width when active */
+    width: 200px;
 }
 
 .main-content {
@@ -50,11 +50,11 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    animation: fadeInScale 1s ease-out; /* Animation for main content */
+    animation: fadeInScale 1s ease-out;
 }
 
 .main-content.active {
-    margin-left: 200px; /* Shift content to the right when sidebar is active */
+    margin-left: 200px;
 }
 
 .sidebar-header {
@@ -98,6 +98,7 @@ body {
     padding: 12px 0;
 }
 
+
 .sidebar-menu li a:hover {
     background-color: #4bc0c07e;
 }
@@ -106,6 +107,7 @@ body {
     margin-left: 25px;
     margin-right: 20px;
 }
+
 
 .main-content {
     margin-left: var(--sidebar-width);
@@ -135,11 +137,11 @@ body {
 }
 
 .user-info .user-name {
-    color: #2EB8B8; /* Color for user name */
+    color: #2EB8B8; 
 }
 
 .sidebar-header .finance {
-    color: #2EB8B8; /* Color for Finance part */
+    color: #2EB8B8;
 }
 
 .main-title {

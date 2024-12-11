@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/styles/ai_styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('#analyze-btn').click(function() {
+            var userInput = $('#financial-data').val();  // Obtém o texto digitado pelo usuário
+            if (userInput.trim() === "") {
+                alert("Por favor, insira algum texto!");
+                return;
+            }
+
+            $.ajax({
+                url: '/ai',  // Envia a requisição para a rota do Flask
+                type: 'POST',
+                data: {text: userInput},  // Envia o texto como dado
+                success: function(response) {
+                    $('#response-box').html('<p>' + response + '</p>');  // Exibe a resposta
+                },
+                error: function(xhr, status, error) {
+                    $('#response-box').html('<p>Ocorreu um erro. Tente novamente.</p>');
+                }
+            });
+        });
+    });
+  </script>
+</head>
+<body>
+    <div class="ai-container">
+        <div class="ai-content">
+            <div class="ai-form">
+                <!-- Remover action e method, já que a requisição será feita por AJAX -->
+                <textarea id="financial-data" name="text" placeholder="Fale com o seu assistente financeiro." rows="6"></textarea>
+                <button id="analyze-btn" type="button">Analisar</button>
+            </div>
+
+            <div class="ai-response">
+                <h3>Resposta da IA:</h3>
+                <div id="response-box" class="response-box">
+                    <p>{{ response }}</p> <!-- Exibe a resposta aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
